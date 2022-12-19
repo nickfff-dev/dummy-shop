@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { XMarkIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PlusIcon, MinusIcon, } from '@heroicons/react/24/outline'
 
 const CartItem = ({ product }: { product: any }) => {
 
