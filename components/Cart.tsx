@@ -55,8 +55,8 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {   products.length > 0 ? (products.map((product:any) => (
-                             <CartItem product ={product} />
+                            {   products.length > 0 ? (products.map((product:any, index:any) => (
+                             <CartItem key={index} product ={product} />
                             ))) : (<div className="mt-12 flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } height={80} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           </ul>
                         </div>
