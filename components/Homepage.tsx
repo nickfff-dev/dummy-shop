@@ -72,10 +72,18 @@ const HomePage = () => {
   const toggleCart = () => {
     setOpen(!open)
   }
+  const addTocart = (product: any) => {
+    setCartProducts(
+      [
+        ...cartproducts,
+        product
+      ]
+    )
+  }
   return (<>
     <Header toggleCart={toggleCart} />
-    <ProductView products={products} />
-    <Cart products={cartproducts} open={open} setOPen={setOpen} setClose={setClose} />
+    <ProductView products={products} addTocart={addTocart} />
+    <Cart products={cartproducts? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} />
   </>)
 }
 
