@@ -63,6 +63,7 @@ const products = [
   },
 ]
 const HomePage = () => {
+  const [cartproducts, setCartProducts] = useState<any>([])
   const [open, setOpen] = useState(false)
   const setClose = () => {
     setOpen(false)
@@ -74,7 +75,7 @@ const HomePage = () => {
   return (<>
     <Header toggleCart={toggleCart} />
     <ProductView products={products} />
-    <Cart products={products} open={open} setOPen={setOpen} setClose={setClose} />
+    <Cart products={cartproducts} open={open} setOPen={setOpen} setClose={setClose} />
   </>)
 }
 

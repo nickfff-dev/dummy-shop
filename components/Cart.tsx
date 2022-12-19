@@ -1,9 +1,9 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
-
-
+import CartSvg from './../images/cart.svg'
 export default function Cart({products, open, setOPen,setClose}:{products:any,open:any, setOPen:any,setClose:any}) {
 
 
@@ -54,7 +54,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {products.map((product:any) => (
+                            {   products.length > 0 ? (products.map((product:any) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
@@ -88,7 +88,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                                   </div>
                                 </div>
                               </li>
-                            ))}
+                            ))) : (<div className="mt-12 flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } height={80} /><p>Your personal cart is empty</p>    <button className="text-dummygreen">Shop Now</button></div>)}
                           </ul>
                         </div>
                       </div>
