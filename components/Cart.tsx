@@ -107,7 +107,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                         </div>
                       </div>
                         <div className="-mt-3 ">
-                          <div className="bg-[#FAF1E5] py-2 px-1 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>
+                          <div className="bg-[#FAF1E5] py-1 px-1 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>
                         <div className="flow-root  ">
                           <ul role="list" className="-my-6   divide-y divide-gray-200">
                             {   products.length > 0 ? (products.map((product:any, index:any) => (

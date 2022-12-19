@@ -59,7 +59,7 @@ const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCou
     
         <div className="flex items-center rounded rounded-[8px] bg-[#f6f7f8] h-[56px]  shadow-inner px-2">
      
-          <input className="  w-[550px] bg-transparent placeholder-gray-700 placeholder:font-medium placeholder:text-lg font-semibold text-sm pl-4 focus:border-0" type="text" placeholder="Search Store ..."/>
+          <input className="  w-[550px] bg-transparent placeholder-gray-700 placeholder:font-bold placeholder:leading-6  placeholder:text-md font-semibold text-sm pl-4 focus:border-0" type="text" placeholder="Search Walgreens ..."/>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale70"><path fillRule="evenodd" clipRule="evenodd" d="M16.396 14.275a7 7 0 1 0-2.121 2.121l3.664 3.665a1.5 1.5 0 0 0 2.122-2.122l-3.665-3.664ZM10.5 14.5a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"></path></svg>
         </div>
 
