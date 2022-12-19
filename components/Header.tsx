@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from  "./../images/logo.png"
+import Logo from  "./../images/logo.svg"
 import { ChevronLeftIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCount: any, cartTotal: any }) => {
   const carT= cartTotal()
