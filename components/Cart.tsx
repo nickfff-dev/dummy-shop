@@ -9,8 +9,9 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
 
 
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOPen}>
+    
+       <Transition.Root show={open} as={Fragment} >
+      <Dialog as="div" className="relative z-40" onClose={setOPen}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -20,7 +21,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0  bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -104,5 +105,6 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
         </div>
       </Dialog>
     </Transition.Root>
+  
   )
 }
