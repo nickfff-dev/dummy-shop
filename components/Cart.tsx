@@ -80,7 +80,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-dummygreen  hover:text-indigo-500"
                                       >
                                         Remove
                                       </button>
@@ -103,7 +103,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                       <div className="mt-6">
                         <a
                           href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-dummygreen px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                         >
                           Checkout
                         </a>
@@ -113,7 +113,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                           or
                           <button
                             type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-dummygreen hover:text-indigo-500"
                             onClick={setClose}
                           >
                             Continue Shopping
