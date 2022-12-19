@@ -1,5 +1,7 @@
 import ProductView from "./ProductView"
-
+import Cart from "./Cart"
+import { useState } from "react"
+import Header from '../components/Header';
 const products = [
   {
     id: 1,
@@ -61,8 +63,18 @@ const products = [
   },
 ]
 const HomePage = () => {
+  const [open, setOpen] = useState(true)
+  const setClose = () => {
+    setOpen(false)
+  }
+
+  const toggleCart = () => {
+    setOpen(!open)
+  }
   return (<>
+    <Header toggleCart={toggleCart} />
     <ProductView products={products} />
+    <Cart products={products} open={open} setOPen={setOpen} setClose={setClose} />
   </>)
 }
 

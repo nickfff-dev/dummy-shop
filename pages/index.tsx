@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import { useEffect } from 'react'
 import HomePage from '../components/Homepage';
-import Header from '../components/Header';
+
 const Home = () => {
   
  
@@ -17,7 +17,7 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
 
       </Head>
-      <Header/>
+
 <HomePage/>
 
    
