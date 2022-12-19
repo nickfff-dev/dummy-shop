@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Logo from  "./../images/logo.png"
 
-const Header = ({toggleCart,cartCount}:{toggleCart:any,cartCount:any}) => {
+const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCount: any, cartTotal: any }) => {
+  const carT= cartTotal()
   return (
     <header className="bg-white">
       <div className="container mx-auto px-4 py-8 flex items-center justify-between">
@@ -45,7 +46,7 @@ const Header = ({toggleCart,cartCount}:{toggleCart:any,cartCount:any}) => {
     
         <div className=" hidden sm:flex flex-col font-bold">
           <span className="text-xs text-dummygreen">Your Cart</span>
-          <span>$2,650,59</span>
+          <span>${carT}</span>
         </div>
       </div>
       

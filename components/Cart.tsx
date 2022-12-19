@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import CartItem from './CartItem'
 
 import CartSvg from './../images/cart.svg'
 export default function Cart({products, open, setOPen,setClose}:{products:any,open:any, setOPen:any,setClose:any}) {
@@ -55,39 +56,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
                             {   products.length > 0 ? (products.map((product:any) => (
-                              <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                  <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
-                                    className="h-full w-full object-cover object-center"
-                                  />
-                                </div>
-
-                                <div className="ml-4 flex flex-1 flex-col">
-                                  <div>
-                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                      <h3>
-                                        <a href={product.href}>{product.name}</a>
-                                      </h3>
-                                      <p className="ml-4">{product.price}</p>
-                                    </div>
-                                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
-                                  </div>
-                                  <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500">Qty {product.quantity}</p>
-
-                                    <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium text-dummygreen  hover:text-indigo-500"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
+                             <CartItem product ={product} />
                             ))) : (<div className="mt-12 flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } height={80} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           </ul>
                         </div>
@@ -97,7 +66,12 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <p>${
+                          products.reduce((acc: any, prd: any) => {
+                            
+                         return acc + prd.price
+                        }, 0)
+                        }</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <div className="mt-6">

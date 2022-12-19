@@ -9,7 +9,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },
   {
@@ -18,7 +18,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },  {
     id: 1,
@@ -26,7 +26,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },  {
     id: 1,
@@ -34,7 +34,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },  {
     id: 1,
@@ -42,7 +42,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },  {
     id: 1,
@@ -50,7 +50,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },  {
     id: 1,
@@ -58,7 +58,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 35,
     color: 'Black',
   },
 ]
@@ -80,8 +80,21 @@ const HomePage = () => {
       ]
     )
   }
+
+  const cartTotal = () => {
+    let total: number;
+    if (cartproducts.length < 1) {
+      total= 0
+    } else {
+      total =cartproducts.reduce((acc: number, prd: any) => {
+        return acc + prd.price
+      },0)
+    }
+      console.log(total)
+    return total
+  }
   return (<>
-    <Header toggleCart={toggleCart} cartCount={cartproducts.length} />
+    <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={ cartTotal} />
     <ProductView products={products} addTocart={addTocart} />
     <Cart products={cartproducts? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} />
   </>)
