@@ -99,14 +99,15 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
         </div>
                             </div>
                           </div>
-                          <span className="font-bold">${ products.reduce((acc: any, prd: any) => {
+                          <span className="font-bold mt-5">${ products.reduce((acc: any, prd: any) => {
                             
                             return acc + prd.price
                            }, 0)
                            }</span>
                         </div>
                       </div>
-                      <div className="mt-8 ">
+                        <div className="-mt-3 ">
+                          <div className="bg-[#FAF1E5] py-2 px-1 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>
                         <div className="flow-root  ">
                           <ul role="list" className="-my-6   divide-y divide-gray-200">
                             {   products.length > 0 ? (products.map((product:any, index:any) => (
