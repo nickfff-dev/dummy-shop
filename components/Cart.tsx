@@ -111,7 +111,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                           <ul role="list" className="-my-6   divide-y divide-gray-200">
                             {   products.length > 0 ? (products.map((product:any, index:any) => (
                              <CartItem key={index} product ={product} />
-                            ))) : (<div className="overflow-y-hidden flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
+                            ))) : (<div className="flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           </ul>
                         </div>
                       </div>
@@ -121,7 +121,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                     <div className="border-t border-gray-200    mb-1 px-1">
                      
                    
-                      <div className="mt-6  text-center rounded-md border border-transparent bg-dummygreen px-6 py-3">
+                      <div className=" text-center rounded-md border border-transparent bg-dummygreen px-6 py-3">
                         <a
                           href="#"
                           className="  pl-6 font-bold text-xl text-white"
