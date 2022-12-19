@@ -63,7 +63,7 @@ const products = [
   },
 ]
 const HomePage = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const setClose = () => {
     setOpen(false)
   }
