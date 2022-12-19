@@ -81,7 +81,7 @@ const HomePage = () => {
     )
   }
   return (<>
-    <Header toggleCart={toggleCart} />
+    <Header toggleCart={toggleCart} cartCount={cartproducts.length} />
     <ProductView products={products} addTocart={addTocart} />
     <Cart products={cartproducts? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} />
   </>)
