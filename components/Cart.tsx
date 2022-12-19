@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PlusIcon, MinusIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import CartItem from './CartItem'
 
