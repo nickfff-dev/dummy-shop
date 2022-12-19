@@ -88,7 +88,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                                   </div>
                                 </div>
                               </li>
-                            ))) : (<div className="mt-12 flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } height={80} /><p>Your personal cart is empty</p>    <button className="text-dummygreen">Shop Now</button></div>)}
+                            ))) : (<div className="mt-12 flex flex-col items-center justify-center"><Image alt="cart" src={CartSvg} width={300 } height={80} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           </ul>
                         </div>
                       </div>
