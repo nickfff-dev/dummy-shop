@@ -1,5 +1,5 @@
-
-
+import Image from "next/image";
+import Logo from  "./../images/logo.png"
 
 const Header = () => {
   return (
@@ -7,8 +7,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-8 flex items-center">
     
      
-        <div className="mr-auto md:w-48 flex-shrink-0">
-          <img className="h-8 md:h-10" src="https://i.ibb.co/98pHdFq/2021-10-27-15h51-15.png" alt=""/>
+        <div className="mr-auto flex items-center gap-1 md:w-48 flex-shrink-0">
+          <Image className="h-8 md:h-10" src={Logo} alt="" width={50 } height={70} /> <span className="font-bold text-dummygreen">Dummy Groceries</span>
         </div>
     
     
@@ -22,7 +22,7 @@ const Header = () => {
     
         <div className="ml-auto md:w-48 hidden sm:flex flex-col place-items-end">
           <span className="font-bold md:text-xl">8 800 332 65-66</span>
-          <span className="font-semibold text-sm text-gray-400">Support 24/7</span>
+          <span className="font-semibold text-sm text-dummygreen">Support 24/7</span>
         </div>
     
     
@@ -49,7 +49,7 @@ const Header = () => {
         </nav>
     
         <div className="ml-4 hidden sm:flex flex-col font-bold">
-          <span className="text-xs text-gray-400">Your Cart</span>
+          <span className="text-xs text-dummygreen">Your Cart</span>
           <span>$2,650,59</span>
         </div>
       </div>
