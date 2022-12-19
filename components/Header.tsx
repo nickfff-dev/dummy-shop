@@ -49,7 +49,7 @@ const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCou
      
       
         <div className=" h-[56px] flex items-center justify-between gap-2 flex-shrink-0">
-        <div className="w-5 pr-10"><svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg></div>
+        <div className="w-5 pr-10"><svg width="24" height="24" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale70"><path fillRule="evenodd" clipRule="evenodd" d="M18.8 17.5c.939 0 1.7.672 1.7 1.5s-.761 1.5-1.7 1.5H5.2c-.939 0-1.7-.672-1.7-1.5s.761-1.5 1.7-1.5h13.6Zm0-7c.939 0 1.7.672 1.7 1.5s-.761 1.5-1.7 1.5H5.2c-.939 0-1.7-.672-1.7-1.5s.761-1.5 1.7-1.5h13.6Zm0-7c.939 0 1.7.672 1.7 1.5s-.761 1.5-1.7 1.5H5.2c-.939 0-1.7-.672-1.7-1.5s.761-1.5 1.7-1.5h13.6Z"></path></svg></div>
           <Image className="" src={Logo} alt="" width={125} /> 
           <div className="flex items-center mt-2 w-20"><ChevronLeftIcon className="bold h-4 w-4 text-[#72767E]"/>
           <p className="font-bold text-[12px] h-4 text-[#72767E]">All stores</p></div>
