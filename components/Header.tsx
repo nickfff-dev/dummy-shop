@@ -1,10 +1,50 @@
 import Image from "next/image";
-import Logo from  "./../images/logo.svg"
+import Logo from "./../images/logo.svg"
+import { useState , useEffect} from "react";
 import { ChevronLeftIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCount: any, cartTotal: any }) => {
+
+  const stickyOnScroll = () => { 
+    const stickheader = document.getElementById("instahead");
+    const sticky = (stickheader as any)?.offsetTop
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > sticky) {
+   
+        stickheader?.classList.add('sticky');
+        stickheader?.classList.add('top-0');
+        stickheader?.classList.add('z-20');
+   
+
+
+        
+
+
+      }
+      else { 
+   
+  
+        stickheader?.classList.remove('sticky');
+        stickheader?.classList.remove('top-0');
+        stickheader?.classList.remove('z-20');
+     
+
+
+ 
+      }
+     })
+
+
+
+  }
+
+  useEffect(() => { 
+    stickyOnScroll();
+  }, [])
+
   const carT= cartTotal()
   return (
-    <header className="bg-white">
+    <header className="bg-white" id="instahead">
       <div className="container mx-auto px-4 py-5 flex items-center justify-between">
      
       
