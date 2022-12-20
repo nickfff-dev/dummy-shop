@@ -10,7 +10,7 @@ const categories =['Medicine','First Aid & Safety','Snacks & Candy','Food & Pant
 const products = [
   {
     id: 1,
-    name: 'FLONASE 24Hr Allergy Relief Nasal Spray, 24Hr Allergy Relief Nasal Spray',
+    name: 'FLONASE 24Hr Allergy Relief Nasal Spray',
     href: '#',
     imageSrc: 'https://www.instacart.com/image-server/394x394/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_02886abb-a978-4b00-ba79-61a89f6d946e.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
@@ -193,7 +193,7 @@ const HomePage = () => {
         
       </div>
       <div className="col-start-2 col-end-6">
-        <div className=" h-32   rounded p-6 ">
+        <div className=" h-32   rounded p-5 mb-5">
           <Image src={banner} alt="banner" className="rounded-xl" />
           <p className="float-right text-sm text-gray-500">Sponsored</p>
         </div>

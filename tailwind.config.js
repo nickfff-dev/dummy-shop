@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dummygreen": "#0aad0a"
+        "dummygreen": "#0aad0a",
+        "black": "#343538"
       },
       backgroundImage: {
         "baridi": "url('/images/banner.svg')"
