@@ -23,7 +23,7 @@ const CartItem = ({ product }: { product: any }) => {
           <a href={product.href}>{product.name}</a>
           </h3>
          
-        <div className="flex px-1"><p className="border px-2 text-[12px] rounded border-gray-300">2</p>  <p className="ml-5 text-[12px]">${parseFloat(product.price).toLocaleString('en-Us')}.00</p></div>
+        <div className="flex px-1"><p className="border px-2 text-[12px] rounded border-gray-300">2</p>  <p className="ml-5 text-[12px]">${parseFloat(product.price).toLocaleString('en-Us')}</p></div>
       </div>
       <p className=" text-sm text-gray-500 text-[10px]">{product.color}</p>
     </div>
