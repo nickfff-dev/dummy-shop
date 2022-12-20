@@ -3,6 +3,7 @@ import Cart from "./Cart"
 import { useState } from "react"
 import Image from "next/image";
 import Header from '../components/Header';
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import wLogo from "./../images/shoplogo.svg"
 const categories =['Medicine','First Aid & Safety','Snacks & Candy','Food & Pantry','Beauty','Household','Drinks','Personal Care','Home Health','Vitamins & Supplements','Pet','Baby & Child','Frozen','Sales','COVID Essentials Shop']
 const products = [
@@ -159,16 +160,18 @@ const HomePage = () => {
     <div className="grid grid-cols-5 grid-flow-row ">
       <div className="col-start-1 col-end-2 divide-y border-r border-r-4   ">
       
-          <div className="flex flex-col w-full justify-center items-center mt-3 row-start-1 row-end-2">
+          <div className="flex flex-col w-full justify-center gap-1 items-center mt-3 row-start-1 row-end-2">
             <Image src={wLogo} width={88} height={88} alt="fr" />
             <p>Walgreens</p>
             <div className="flex items-center">
-                                       <svg width="18" height="18" viewBox="0 0 24 24" fill="#0AAD0A" xmlns="http://www.w3.org/2000/svg"  color="brandPrimaryRegular"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.535 4.32c.478-1.615-1.657-2.671-2.65-1.31L5.24 12.115c-.723.99-.016 2.384 1.212 2.384H11l-1.535 5.18c-.478 1.614 1.657 2.67 2.65 1.31l6.645-9.106c.723-.991.015-2.384-1.212-2.384H13l1.535-5.18Z"></path></svg>
-            <p className="text-dummygreen font-bold text-[12px] ">Delivery by 1:05pm</p>
+                                       
+            <p className="text-gray-400 font-bold text-[13px] ">Everyday Store Prices</p>
+            <ChevronRightIcon height={8} />
           </div>
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-1 items-center mb-2">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  className="css-1emnyvb fill-[#2B78C6]"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.553 1.88a2 2 0 0 0-3.111 0l-.408.504a2 2 0 0 1-2.075.674l-.626-.168a2 2 0 0 0-2.517 1.828l-.033.648A2 2 0 0 1 3.501 7.13l-.606.232a2 2 0 0 0-.961 2.958l.353.544a2 2 0 0 1 0 2.181l-.353.544a2 2 0 0 0 .961 2.958l.606.232a2 2 0 0 1 1.282 1.765l.033.648a2 2 0 0 0 2.517 1.828l.626-.168a2 2 0 0 1 2.075.674l.408.504a2 2 0 0 0 3.11 0l.408-.504a2 2 0 0 1 2.075-.674l.626.168a2 2 0 0 0 2.517-1.828l.033-.648a2 2 0 0 1 1.283-1.765l.605-.232a2 2 0 0 0 .962-2.958l-.354-.544a2 2 0 0 1 0-2.181l.354-.544a2 2 0 0 0-.962-2.958l-.605-.232a2 2 0 0 1-1.283-1.765l-.033-.648A2 2 0 0 0 16.66 2.89l-.626.168a2 2 0 0 1-2.075-.674l-.408-.504Zm-7.367 9.266a1.5 1.5 0 0 1 2.121-.001l1.943 1.94 5.436-5.44a1.5 1.5 0 1 1 2.122 2.121l-6.497 6.5a1.5 1.5 0 0 1-2.12 0l-3.004-3a1.5 1.5 0 0 1 0-2.12Z"></path></svg>
-            <p className="text-[#2B78C6] font-bold text-[12px] ">100% satisfaction guarantee</p>
+            <p className="text-[#2B78C6] font-bold text-[13px] ">100% satisfaction guarantee</p>
+            <ChevronRightIcon height={8} />
           </div>
           </div>
           <div className="flex flex-col w-full px-4 pt-5 gap-1">
