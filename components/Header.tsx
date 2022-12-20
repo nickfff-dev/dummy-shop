@@ -76,7 +76,7 @@ const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCou
         </div>
         
         <div>
-          <button onClick={toggleCart} className="bg-[#f6f7f8] rounded-full px-5 py-3 text-black font-bold flex gap-2 items-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale70"><path fillRule="evenodd" clipRule="evenodd" d="M7.923 4.526 8.5 6H19a1.5 1.5 0 0 1 1.455 1.864l-1.5 6A1.5 1.5 0 0 1 17.5 15h-8a1.5 1.5 0 0 1-1.398-.956L5 6.5a1.5 1.5 0 1 1 0-3h1.5a1.5 1.5 0 0 1 1.423 1.026ZM10 20.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm7 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path></svg><span>{ cartCount}</span></button>
+          <button onClick={toggleCart} className={` ${cartCount > 0 ? "bg-dummygreen text-white":"bg-[#f6f7f8] text-black"} rounded-full px-5 py-3  font-bold flex gap-2 items-center`}><svg width="24" height="24" viewBox="0 0 24 24" fill={cartCount > 0? "white":"#343538"} xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale70"><path fillRule="evenodd" clipRule="evenodd" d="M7.923 4.526 8.5 6H19a1.5 1.5 0 0 1 1.455 1.864l-1.5 6A1.5 1.5 0 0 1 17.5 15h-8a1.5 1.5 0 0 1-1.398-.956L5 6.5a1.5 1.5 0 1 1 0-3h1.5a1.5 1.5 0 0 1 1.423 1.026ZM10 20.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm7 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path></svg><span>{ cartCount}</span></button>
        
               </div>
         
