@@ -96,7 +96,7 @@ const HomePage = () => {
   return (<>
     <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={ cartTotal} />
     <ProductView products={products} addTocart={addTocart} />
-    <Cart products={cartproducts? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} addTocart={addTocart} />
+    <Cart products={cartproducts ? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} addTocart={addTocart} suggestedProducts={ products} />
   </>)
 }
 

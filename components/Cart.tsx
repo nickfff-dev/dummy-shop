@@ -6,7 +6,7 @@ import CartItem from './CartItem'
 import shoplogo from './../images/shoplogo.svg'
 
 import CartSvg from './../images/cart.svg'
-export default function Cart({products, open, setOPen,setClose ,addTocart}:{products:any,open:any, setOPen:any,setClose:any,addTocart:any}) {
+export default function Cart({products, suggestedProducts, open, setOPen,setClose ,addTocart}:{products:any,open:any, setOPen:any,setClose:any,addTocart:any, suggestedProducts:any}) {
 
 
   return (
@@ -82,29 +82,31 @@ export default function Cart({products, open, setOPen,setClose ,addTocart}:{prod
  
 </label>
                         </div>
-                        <div className="bg-white border-t flex justify-between pr-2 py-2">
-                          <div className="flex gap-2">
-                            <Image src={shoplogo} width={50} alt="shop" />
-                            <div className="flex flex-col">
-                              <span className="font-bold">
-                              Walgreens
-                              </span>
-                                     <div className="flex items-center">
-                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#0AAD0A" xmlns="http://www.w3.org/2000/svg"  color="brandPrimaryRegular"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.535 4.32c.478-1.615-1.657-2.671-2.65-1.31L5.24 12.115c-.723.99-.016 2.384 1.212 2.384H11l-1.535 5.18c-.478 1.614 1.657 2.67 2.65 1.31l6.645-9.106c.723-.991.015-2.384-1.212-2.384H13l1.535-5.18Z"></path></svg>
-          <p className="text-dummygreen font-bold text-[12px] ">Delivery by 1:05pm</p>
-        </div>
-        <div className="flex gap-1 items-center">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  className="css-1emnyvb fill-[#2B78C6]"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.553 1.88a2 2 0 0 0-3.111 0l-.408.504a2 2 0 0 1-2.075.674l-.626-.168a2 2 0 0 0-2.517 1.828l-.033.648A2 2 0 0 1 3.501 7.13l-.606.232a2 2 0 0 0-.961 2.958l.353.544a2 2 0 0 1 0 2.181l-.353.544a2 2 0 0 0 .961 2.958l.606.232a2 2 0 0 1 1.282 1.765l.033.648a2 2 0 0 0 2.517 1.828l.626-.168a2 2 0 0 1 2.075.674l.408.504a2 2 0 0 0 3.11 0l.408-.504a2 2 0 0 1 2.075-.674l.626.168a2 2 0 0 0 2.517-1.828l.033-.648a2 2 0 0 1 1.283-1.765l.605-.232a2 2 0 0 0 .962-2.958l-.354-.544a2 2 0 0 1 0-2.181l.354-.544a2 2 0 0 0-.962-2.958l-.605-.232a2 2 0 0 1-1.283-1.765l-.033-.648A2 2 0 0 0 16.66 2.89l-.626.168a2 2 0 0 1-2.075-.674l-.408-.504Zm-7.367 9.266a1.5 1.5 0 0 1 2.121-.001l1.943 1.94 5.436-5.44a1.5 1.5 0 1 1 2.122 2.121l-6.497 6.5a1.5 1.5 0 0 1-2.12 0l-3.004-3a1.5 1.5 0 0 1 0-2.12Z"></path></svg>
-          <p className="text-[#2B78C6] font-bold text-[12px] ">100% satisfaction guarantee</p>
-        </div>
+                          {
+                            products.length > 0 ? (     <div className="bg-white border-t flex justify-between pr-2 py-2">
+                            <div className="flex gap-2">
+                              <Image src={shoplogo} width={50} alt="shop" />
+                              <div className="flex flex-col">
+                                <span className="font-bold">
+                                Walgreens
+                                </span>
+                                       <div className="flex items-center">
+                                       <svg width="18" height="18" viewBox="0 0 24 24" fill="#0AAD0A" xmlns="http://www.w3.org/2000/svg"  color="brandPrimaryRegular"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.535 4.32c.478-1.615-1.657-2.671-2.65-1.31L5.24 12.115c-.723.99-.016 2.384 1.212 2.384H11l-1.535 5.18c-.478 1.614 1.657 2.67 2.65 1.31l6.645-9.106c.723-.991.015-2.384-1.212-2.384H13l1.535-5.18Z"></path></svg>
+            <p className="text-dummygreen font-bold text-[12px] ">Delivery by 1:05pm</p>
+          </div>
+          <div className="flex gap-1 items-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  className="css-1emnyvb fill-[#2B78C6]"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.553 1.88a2 2 0 0 0-3.111 0l-.408.504a2 2 0 0 1-2.075.674l-.626-.168a2 2 0 0 0-2.517 1.828l-.033.648A2 2 0 0 1 3.501 7.13l-.606.232a2 2 0 0 0-.961 2.958l.353.544a2 2 0 0 1 0 2.181l-.353.544a2 2 0 0 0 .961 2.958l.606.232a2 2 0 0 1 1.282 1.765l.033.648a2 2 0 0 0 2.517 1.828l.626-.168a2 2 0 0 1 2.075.674l.408.504a2 2 0 0 0 3.11 0l.408-.504a2 2 0 0 1 2.075-.674l.626.168a2 2 0 0 0 2.517-1.828l.033-.648a2 2 0 0 1 1.283-1.765l.605-.232a2 2 0 0 0 .962-2.958l-.354-.544a2 2 0 0 1 0-2.181l.354-.544a2 2 0 0 0-.962-2.958l-.605-.232a2 2 0 0 1-1.283-1.765l-.033-.648A2 2 0 0 0 16.66 2.89l-.626.168a2 2 0 0 1-2.075-.674l-.408-.504Zm-7.367 9.266a1.5 1.5 0 0 1 2.121-.001l1.943 1.94 5.436-5.44a1.5 1.5 0 1 1 2.122 2.121l-6.497 6.5a1.5 1.5 0 0 1-2.12 0l-3.004-3a1.5 1.5 0 0 1 0-2.12Z"></path></svg>
+            <p className="text-[#2B78C6] font-bold text-[12px] ">100% satisfaction guarantee</p>
+          </div>
+                              </div>
                             </div>
-                          </div>
-                          <span className="font-bold mt-5 text-[12px]">${ products.reduce((acc: any, prd: any) => {
-                            
-                            return acc + prd.price
-                           }, 0)
-                           }.00</span>
-                        </div>
+                            <span className="font-bold mt-5 text-[12px]">${ products.reduce((acc: any, prd: any) => {
+                              
+                              return acc + prd.price
+                             }, 0)
+                             }.00</span>
+                          </div>): null
+                   }
                       </div>
                         <div className="-mt-3 ">
                           {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 h-8 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
@@ -117,10 +119,10 @@ export default function Cart({products, open, setOPen,setClose ,addTocart}:{prod
                         </div>
                         </div>
                         {
-                          products.length > 0 ? (             <div>
-                            <div className="bg-gray-300 py-3  px-2 capitalize"><p>suggested Items</p> </div>
-                            <div className=" grid grid-cols-1  gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                            {products.map((product:any) => (
+                          products.length > 1 ? (             <div >
+                            <div className="bg-[#F6F7F8] py-3  px-2 capitalize "><p className="text-[13px] font-bold">suggested Items</p> </div>
+                            <div className=" grid grid-cols-1 pt-2 bg-white px-2 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                            {suggestedProducts.map((product:any) => (
                   <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
                     <div className="h-24 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-24">
                       <img
