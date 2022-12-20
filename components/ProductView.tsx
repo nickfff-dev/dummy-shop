@@ -14,8 +14,8 @@
                   className="h-50  w-full object-center lg:h-auto object-contain"
                 />
               </div>
-              <span className={` ${product.category ? "visible": "invisible"} text-[11px]  text-[#2B78C6] bg-[#F2F8FF] pr-10 mb-2 font-bold z-20 px-1`}>{product.category}</span>
-              <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup>{product.price.toString().split(".")[1]}</sup></p>
+              <span className={` ${product.category ? "visible": "invisible"} text-[11px] rounded text-[#2B78C6] bg-[#F2F8FF] pr-10 mb-2 font-bold z-20 px-1`}>{product.category}</span>
+              <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup className="text-[14px] -ml-1">{product.price.toString().split(".")[1]}</sup></p>
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">

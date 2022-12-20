@@ -104,7 +104,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                               
                               return acc + prd.price
                              }, 0)
-                             }.00</span>
+                             }</span>
                           </div>): null
                    }
                       </div>
@@ -124,25 +124,27 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                             <div className=" grid grid-cols-1 pt-2 bg-white px-2 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {suggestedProducts.map((product:any) => (
                   <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
-                    <div className="h-24 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-24">
-                      <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
-                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                      />
-                    </div>
-                    <div className="mt-4 flex justify-between">
-                      <div>
-                        <h3 className="text-sm text-gray-700">
-                          <a href={product.href}>
-                            <span aria-hidden="true" className="absolute inset-0" />
-                            {product.name}
-                          </a>
-                        </h3>
-                        <p className="mt-1 text-sm text-gray-500">{product.color}</p>
-                      </div>
-                      <p className="text-sm font-medium text-gray-900">${product.price}</p>
-                    </div>
+         <div className="min-h-50   overflow-hidden rounded-md  group-hover:opacity-75  lg:h-50">
+                <img
+                  src={product.imageSrc}
+                  alt={product.imageAlt}
+                  className="h-50  w-full object-center lg:h-auto object-contain"
+                />
+              </div>
+              <span className={` ${product.category ? "visible": "invisible"} text-[8px] rounded text-[#2B78C6] bg-[#F2F8FF] mb-2 font-bold z-20 px-1`}>{product.category}</span>
+              <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup className="text-[14px] -ml-1">{product.price.toString().split(".")[1]}</sup></p>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-gray-700">
+                    <a href={product.href}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {product.name}
+                    </a>
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                </div>
+              
+              </div>
                   </div>
                 ))}
                             </div>
@@ -159,14 +161,14 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                       <div className="  rounded-md border border-transparent bg-dummygreen px-6 py-3">
                         <a
                           href="#"
-                          className="  pl-8 font-bold text-xl text-white"
+                          className="pl-8 font-bold text-xl text-white"
                         >
                          Go to Checkout <span className="float-right bg-[#004d23] flex flex-col justify-center px-2 rounded text-[12px] ">${
                           products.reduce((acc: any, prd: any) => {
                             
                          return acc + prd.price
                         }, 0)
-                        }.00</span>
+                        }</span>
                         </a>
                       </div></div>
                     
