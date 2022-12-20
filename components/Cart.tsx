@@ -84,7 +84,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                         </div>
                           {
                             products.length > 0 ? (     <div className="bg-white border-t flex justify-between pr-2 py-2">
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 px-1">
                               <Image src={shoplogo} width={50} alt="shop" />
                               <div className="flex flex-col">
                                 <span className="font-bold">
@@ -112,7 +112,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                           {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 h-8 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
                         <div className="flow-root  ">
                         
-                            {   products.length > 0 ? (  <ul role="list" className="  bg-white  divide-y divide-gray-200">{products.map((product:any, index:any) => (
+                            {   products.length > 0 ? (  <ul role="list" className="  bg-white px-2 divide-y divide-gray-200">{products.map((product:any, index:any) => (
                              <CartItem key={index} product ={product} />
                             ))}</ul>) : (<div className="flex flex-col items-center  overflow-y-hidden justify-center"><Image alt="cart" src={CartSvg} width={300 } height={30} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           
