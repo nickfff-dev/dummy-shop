@@ -157,7 +157,7 @@ const HomePage = () => {
   return (<>
     <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={ cartTotal} />
     <div className="grid grid-cols-5 grid-flow-row ">
-      <div className="col-start-1 col-end-2 divide-y border-r   ">
+      <div className="col-start-1 col-end-2 divide-y border-r border-r-4   ">
       
           <div className="flex flex-col w-full justify-center items-center mt-3 row-start-1 row-end-2">
             <Image src={wLogo} width={88} height={88} alt="fr" />
