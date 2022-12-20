@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon, PlusIcon, MinusIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PlusIcon, MinusIcon, ChevronLeftIcon , StarIcon} from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import CartItem from './CartItem'
 import shoplogo from './../images/shoplogo.svg'
@@ -137,11 +137,12 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <a href={product.href}>
+                
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
-                    </a>
-                  </h3>
+                    
+                                    </h3>
+                                    <p className="flex items-center"><StarIcon className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon  className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon className="h-4 w-4  stroke-[#fec12c]"/><span className=" h-4 text-[12px]">(451)</span></p>
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
               
