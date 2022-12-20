@@ -124,12 +124,13 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                             <div className=" grid grid-cols-1 pt-2 bg-white px-2 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {suggestedProducts.map((product:any) => (
                   <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
-         <div className="min-h-50   overflow-hidden rounded-md  group-hover:opacity-75  lg:h-50">
+         <div className="min-h-50   overflow-hidden rounded-md   lg:h-50">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
                   className="h-50  w-full object-center lg:h-auto object-contain"
-                />
+                                  />
+                                  <button className="flex  bg-dummygreen rounded-full text-[10px] left-10 top-2 px-2 w-14  group-hover:w-full   group-hover:left-0 absolute text-white font-bold py-1 items-center justify-between "><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale00"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.5A1.5 1.5 0 0 1 13.5 5v5.5H19a1.5 1.5 0 0 1 1.493 1.355L20.5 12a1.5 1.5 0 0 1-1.5 1.5h-5.5V19a1.5 1.5 0 0 1-1.355 1.493L12 20.5a1.5 1.5 0 0 1-1.5-1.5v-5.5H5a1.5 1.5 0 0 1-1.493-1.355L3.5 12A1.5 1.5 0 0 1 5 10.5h5.5V5a1.5 1.5 0 0 1 1.355-1.493L12 3.5Z"></path></svg><p className="group-hover:before:content-['Add_to_cart']  before:content-['Add'] "></p> </button>
               </div>
               <span className={` ${product.category ? "visible": "invisible"} text-[8px] rounded text-[#2B78C6] bg-[#F2F8FF] mb-2 font-bold z-20 px-1`}>{product.category}</span>
               <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup className="text-[14px] -ml-1">{product.price.toString().split(".")[1]}</sup></p>
