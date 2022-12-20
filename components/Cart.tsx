@@ -69,7 +69,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                       </div>
 
 
-                      <div className="overflow-y-scroll h-[500px]">
+                      <div className="overflow-y-scroll h-[650px]">
                       <div className="mt-2 border-b mb-5 bg-white border-t">
                         <div className="flex items-center justify-between py-2 px-2"><span className="flex gap-2"><svg width="22" height="22" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg" className="css-1oxvs31"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 2.5a3.24 3.24 0 0 1 2.25.905A3.25 3.25 0 0 1 17.25 7H19a1.5 1.5 0 0 1 1.5 1.5V11H13V9h-2v2H3.5V8.5A1.5 1.5 0 0 1 5 7h1.75a3.25 3.25 0 0 1 3-4.5Zm4.5 4.5A1.25 1.25 0 1 0 13 5.75V7h1.25ZM11 5.75V7H9.75A1.25 1.25 0 1 1 11 5.75ZM3.5 13H11v7.5H5A1.5 1.5 0 0 1 3.5 19v-6Zm9.5 0h7.5v6a1.5 1.5 0 0 1-1.5 1.5h-6V13Z"></path></svg><span className="font-bold">Make this order a gift</span>
                         
@@ -82,7 +82,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
  
 </label>
                         </div>
-                        <div className="bg-white border-t flex justify-between pr-8 py-2">
+                        <div className="bg-white border-t flex justify-between pr-2 py-2">
                           <div className="flex gap-2">
                             <Image src={shoplogo} width={50} alt="shop" />
                             <div className="flex flex-col">
@@ -103,13 +103,13 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                             
                             return acc + prd.price
                            }, 0)
-                           }</span>
+                           }.00</span>
                         </div>
                       </div>
                         <div className="-mt-3 ">
-                          {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
+                          {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 h-8 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
                         <div className="flow-root  ">
-                          <ul role="list" className="-my-6   divide-y divide-gray-200">
+                          <ul role="list" className="  bg-white  divide-y divide-gray-200">
                             {   products.length > 0 ? (products.map((product:any, index:any) => (
                              <CartItem key={index} product ={product} />
                             ))) : (<div className="flex flex-col items-center  overflow-y-hidden justify-center"><Image alt="cart" src={CartSvg} width={300 } height={30} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
