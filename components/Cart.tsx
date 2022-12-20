@@ -6,7 +6,7 @@ import CartItem from './CartItem'
 import shoplogo from './../images/shoplogo.svg'
 
 import CartSvg from './../images/cart.svg'
-export default function Cart({products, open, setOPen,setClose}:{products:any,open:any, setOPen:any,setClose:any}) {
+export default function Cart({products, open, setOPen,setClose ,addTocart}:{products:any,open:any, setOPen:any,setClose:any,addTocart:any}) {
 
 
   return (
@@ -109,17 +109,49 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                         <div className="-mt-3 ">
                           {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 h-8 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
                         <div className="flow-root  ">
-                          <ul role="list" className="  bg-white  divide-y divide-gray-200">
-                            {   products.length > 0 ? (products.map((product:any, index:any) => (
+                        
+                            {   products.length > 0 ? (  <ul role="list" className="  bg-white  divide-y divide-gray-200">{products.map((product:any, index:any) => (
                              <CartItem key={index} product ={product} />
-                            ))) : (<div className="flex flex-col items-center  overflow-y-hidden justify-center"><Image alt="cart" src={CartSvg} width={300 } height={30} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
-                          </ul>
+                            ))}</ul>) : (<div className="flex flex-col items-center  overflow-y-hidden justify-center"><Image alt="cart" src={CartSvg} width={300 } height={30} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
+                          
                         </div>
+                        </div>
+                        {
+                          products.length > 0 ? (             <div>
+                            <div className="bg-gray-300 py-3  px-2 capitalize"><p>suggested Items</p> </div>
+                            <div className=" grid grid-cols-1  gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                            {products.map((product:any) => (
+                  <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
+                    <div className="h-24 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-24">
+                      <img
+                        src={product.imageSrc}
+                        alt={product.imageAlt}
+                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                      />
+                    </div>
+                    <div className="mt-4 flex justify-between">
+                      <div>
+                        <h3 className="text-sm text-gray-700">
+                          <a href={product.href}>
+                            <span aria-hidden="true" className="absolute inset-0" />
+                            {product.name}
+                          </a>
+                        </h3>
+                        <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                       </div>
-         </div>
+                      <p className="text-sm font-medium text-gray-900">${product.price}</p>
+                    </div>
+                  </div>
+                ))}
+                            </div>
+                          </div>): null
+            }
+                      </div>
+                      
+                
                     </div>
 
-                   
+        
                      
                   <div className="bg-white px-1 py-1 text-center border"> 
                       <div className="  rounded-md border border-transparent bg-dummygreen px-6 py-3">
@@ -135,6 +167,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
                         }.00</span>
                         </a>
                       </div></div>
+                    
                   
                     </div>
                 
