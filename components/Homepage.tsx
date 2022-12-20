@@ -158,8 +158,8 @@ const HomePage = () => {
   }
   return (<>
     <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={ cartTotal} />
-    <div className="grid lg:grid-cols-5 grid-flow-row sm:grid-cols-3 sm:min-w-[1000px] grid-cols-2 min-w-[1000px] ">
-      <div className="col-start-1 col-end-2 divide-y border-r border-r-2 h-screen fixed   ">
+    <div className="grid lg:grid-cols-5 grid-flow-row sm:grid-cols-5  grid-cols-5 min-w-[1000px] ">
+      <div className="col-start-1 col-end-2 divide-y border-r border-r-2 h-screen fixed sm:hidden lg:block  ">
       
           <div className="flex flex-col w-full justify-center gap-1 items-center mt-3 row-start-1 row-end-2">
             <Image src={wLogo} width={88} height={88} alt="fr" />
