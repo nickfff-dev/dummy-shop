@@ -99,7 +99,7 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
         </div>
                             </div>
                           </div>
-                          <span className="font-bold mt-5">${ products.reduce((acc: any, prd: any) => {
+                          <span className="font-bold mt-5 text-[12px]">${ products.reduce((acc: any, prd: any) => {
                             
                             return acc + prd.price
                            }, 0)
@@ -121,20 +121,20 @@ export default function Cart({products, open, setOPen,setClose}:{products:any,op
 
                    
                      
-                   
-                      <div className=" text-center rounded-md border border-transparent bg-dummygreen px-6 py-3">
+                  <div className="bg-white px-1 py-1 text-center border"> 
+                      <div className="  rounded-md border border-transparent bg-dummygreen px-6 py-3">
                         <a
                           href="#"
-                          className="  pl-6 font-bold text-xl text-white"
+                          className="  pl-8 font-bold text-xl text-white"
                         >
                          Go to Checkout <span className="float-right bg-[#004d23] flex flex-col justify-center px-2 rounded text-[12px] ">${
                           products.reduce((acc: any, prd: any) => {
                             
                          return acc + prd.price
                         }, 0)
-                        }</span>
+                        }.00</span>
                         </a>
-                      </div>
+                      </div></div>
                   
                     </div>
                 
