@@ -2,48 +2,20 @@ import pdet from './../images/pdet.jpg'
 import { useEffect, useState } from 'react'
 import Image from "next/image"
 import { ArrowLeftIcon,StarIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-const ProductDetail = () => {
+const ProductDetail = ({closeDetail}:{closeDetail:any}) => {
   
   const [hideMe, setHideMe] = useState(true)
   
 
-  useEffect(() => { 
-    const stickheader = document.getElementById("detailhead");
-       stickyOnScroll();
-       
-  }, [])
-  
-
-  const stickyOnScroll = () => { 
-    const stickheader = document.getElementById("detailhead");
-
-    const sticky = (stickheader as any)?.offsetTop
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > sticky) {
-   
-
-        
-
-        setHideMe(false)
-       
 
 
-        
 
-
-      } else {
-        setHideMe(true)
-      }
-    
-     })
-
-
-  }
-
-
-  return (<div className=" modal overflow-y-hidden   max-h-[300px] bg-white fade  " tabIndex={-1}>
-    <div className={` ${hideMe ? "hidden shadow shadow-xl": ""} flex sticky  justify-between px-2`} id="detailhead">
+  return (<div className=" modal overflow-y-scroll   max-h-[300px] bg-white fade  backdrop-blur" tabIndex={-1} id="fodal" onScroll={(e) => {
+    if (e.currentTarget.scrollTop > 0) { setHideMe(false) }
+    else if(e.currentTarget.scrollTop === 0){setHideMe(true)}
+   console.log( e.currentTarget.scrollTop)
+  }}> 
+    <div className={` ${hideMe ? "hidden ": "shadow shadow-xl fixed top-0 z-40"} flex sticky bg-white  justify-between px-2 py-2`} id="detailhead">
       <div className="flex">
       <Image src={pdet} width={50} height={50} alt="dssd"/>
       <div className="flex flex-col">
@@ -58,7 +30,7 @@ const ProductDetail = () => {
     </button>
     </div>
     <div>
-      <div className="flex gap-1 items-center ">
+      <div className="flex gap-1 items-center " onClick={closeDetail}>
 <ArrowLeftIcon  className="w-5 h-5  text-black"/> <span className="text-black">Back</span>
       </div>
       <div className="grid grid-cols-9 gap-12 w-full">

@@ -13,7 +13,7 @@ function ProductView({ products, addTocart }: { products: any, addTocart: any })
         </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-3">
+        <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-3 ">
           {products.map((product:any, index:number) => (
             <Product key={ index} product={product} addTocart={addTocart}/>
           ))}

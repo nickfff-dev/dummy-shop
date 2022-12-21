@@ -13,8 +13,10 @@ const Product = ({ product, addTocart }: { product: any, addTocart: any }) => {
     } else {
       document.body.classList.remove('overflow-y-hidden')
     }
-  }, [])
-
+  }, [showDetail])
+  const closeDetail = () => {
+    setShowDetail(false);
+}
   
   return (
     <>
@@ -47,7 +49,7 @@ const Product = ({ product, addTocart }: { product: any, addTocart: any }) => {
     
     </div>
       </div>
-     <div  className={` ${showDetail === false ? "hidden" : ""}  fixed top-10 left-0 right-0 z-20 w-full ` }> <ProductDetail/></div>
+      <div className={` ${showDetail === false ? "hidden" : ""}  fixed top-10 left-0 right-0 z-20 w-[1200px] mx-auto shadow shadow-xl `}> <ProductDetail closeDetail={ closeDetail} /></div>
       </>
   )
 }
