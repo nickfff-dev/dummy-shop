@@ -1,7 +1,7 @@
 import Product from "./Product"
 import { useEffect } from "react"
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ChevronLeftIcon, ChevronRightIcon,  } from "@heroicons/react/24/outline"
-function ProductView({ products, addTocart }: { products: any, addTocart: any }) {
+function ProductView({ products, addTocart ,removeFromCart}: { products: any, addTocart: any,removeFromCart:any }) {
    
 
   return (
@@ -15,7 +15,7 @@ function ProductView({ products, addTocart }: { products: any, addTocart: any })
 
         <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-3 ">
           {products.map((product:any, index:number) => (
-            <Product key={ index} product={product} addTocart={addTocart}/>
+            <Product key={index} product={product} addTocart={addTocart} removeFromCart={removeFromCart} />
           ))}
         </div>
       </div>

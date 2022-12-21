@@ -102,8 +102,8 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                             </div>
                             <span className="font-bold mt-5 text-[12px]">${ products.reduce((acc: any, prd: any) => {
                               
-                              return acc + prd.price
-                             }, 0)
+                              return acc + (prd.price * prd.quantity)
+                             }, 0).toFixed(2)
                              }</span>
                           </div>): null
                    }
@@ -122,7 +122,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                           products.length > 1 ? (             <div >
                             <div className="bg-[#F6F7F8] py-3  px-2 capitalize "><p className="text-[13px] font-bold">suggested Items</p> </div>
                             <div className=" grid grid-cols-1 pt-2 bg-white px-2 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                            {suggestedProducts.map((product:any) => (
+                            {suggestedProducts?.map((product:any) => (
                   <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
          <div className="min-h-50   overflow-hidden rounded-md   lg:h-50">
                 <img
@@ -165,11 +165,11 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                           href="#"
                           className="pl-8 font-bold text-xl text-white"
                         >
-                         Go to Checkout <span className="float-right bg-[#004d23] flex flex-col justify-center px-2 rounded text-[12px] ">${
-                          products.reduce((acc: any, prd: any) => {
+                          Go to Checkout <span className="float-right bg-[#004d23] flex flex-col justify-center px-2 rounded text-[12px] ">
+                            ${ products.length > 0 ?  products.reduce((acc: any, prd: any) => {
                             
-                         return acc + prd.price
-                        }, 0)
+                         return acc + (prd.price * prd.quantity)
+                        }, 0) : null
                         }</span>
                         </a>
                       </div></div>

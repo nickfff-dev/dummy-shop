@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "./../images/logo.svg"
 import { useState , useEffect} from "react";
 import { ChevronLeftIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
-const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCount: any, cartTotal: any }) => {
+const Header = ({ toggleCart, cartCount }: { toggleCart: any, cartCount: any, }) => {
 
   const stickyOnScroll = () => { 
     const stickheader = document.getElementById("instahead");
@@ -42,7 +42,7 @@ const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCou
     stickyOnScroll();
   }, [])
 
-  const carT= cartTotal()
+  
   return (
     <header className="bg-white" id="instahead">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">

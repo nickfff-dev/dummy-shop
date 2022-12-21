@@ -17,7 +17,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 52.99,
     color: '288 ct',
-    category:"FSA / HSA Eligible"
+    category: "FSA / HSA Eligible",
+    quantity:1,
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 8.99,
     color: '40 ct',
-    category:"Super Absorbency"
+    category: "Super Absorbency",
+    quantity:1,
 
   },  {
     id: 3,
@@ -37,7 +39,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 23.99,
     color: '2 each',
-    category:"FSA / HSA Eligible"
+    category: "FSA / HSA Eligible",
+    quantity:1,
   },  {
     id: 4,
     name: 'Flowflex Antigen Home Test, Covid-19',
@@ -46,7 +49,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 9.99,
     color: '1 each',
-    category:"FSA / HSA Eligible"
+    category: "FSA / HSA Eligible",
+    quantity:1,
   },  {
     id: 5,
     name: 'Mucinex® DM 12 Hr Relief Tablets, 600 mg Guaifenesin, 30 mg',
@@ -55,7 +59,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 24.99,
     color: '20 ct',
-    category:"FSA / HSA Eligible"
+    category: "FSA / HSA Eligible",
+    quantity:1,
   },  {
     id: 6,
     name: 'Aspercreme Pain Relief Patch, Max Strength',
@@ -64,7 +69,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 14.49,
     color: '5 ct',
-    category:"FSA / HSA Eligible"
+    category: "FSA / HSA Eligible",
+    quantity:1,
   },  {
     id: 7,
     name: "Bobo's Oat Bar, Chocolate Almond Butter, Stuff'd",
@@ -73,7 +79,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 3.49,
     color: '2.5 oz',
-    category:"Gluten-Free"
+    category: "Gluten-Free",
+    quantity:1,
   },
   {
     id: 8,
@@ -83,7 +90,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 6.99,
     color: '45 each',
-    category:"Gluten-Free"
+    category: "Gluten-Free",
+    quantity:1,
   },
   {
     id: 9,
@@ -93,6 +101,7 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 5.49,
     color: '16 oz',
+    quantity:1,
     
   },
   {
@@ -103,6 +112,7 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 4.79,
     color: '10.5 oz',
+    quantity:1,
     
   },
   {
@@ -113,6 +123,7 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 4.79,
     color: '13 oz',
+    quantity:1,
     
   },
   {
@@ -123,7 +134,7 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 3.29,
     color: '6.6 oz',
-    
+    quantity:1,
   },
 ]
 
@@ -146,21 +157,19 @@ const HomePage = () => {
       ]
     )
   }
+  const removeFromCart = (product: any) => {
+    
+    var array = [...cartproducts]
 
-  const cartTotal = () => {
-    let total: number;
-    if (cartproducts.length < 1) {
-      total= 0
-    } else {
-      total =cartproducts.reduce((acc: number, prd: any) => {
-        return acc + prd.price
-      },0)
+    var index = array.indexOf(product)
+    if (index !== -1) {
+      array.splice(index, 1);
+      setCartProducts({cartproducts: array})
     }
-      console.log(total)
-    return total
   }
+
   return (<>
-    <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={cartTotal} />
+    <Header toggleCart={toggleCart} cartCount={cartproducts.length}  />
 
     <div className="grid lg:grid-cols-5 grid-flow-row sm:grid-cols-5  grid-cols-5 min-w-[1000px]">
       <div className="col-start-1 col-end-2 divide-y border-r border-r-2 h-screen fixed sm:hidden lg:block  ">
@@ -201,7 +210,7 @@ const HomePage = () => {
           <Image src={banner} alt="banner" className="rounded-xl" />
           <p className="float-right text-sm text-gray-500">Sponsored</p>
         </div>
-      <ProductView products={products} addTocart={addTocart} />
+      <ProductView products={products} addTocart={addTocart} removeFromCart={removeFromCart} />
     <Cart products={cartproducts ? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} addTocart={addTocart} suggestedProducts={ products} />
     </div>
     </div>
