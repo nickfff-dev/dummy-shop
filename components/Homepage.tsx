@@ -1,10 +1,11 @@
 import ProductView from "./ProductView"
 import Cart from "./Cart"
-import { useState } from "react"
+import { useState , useEffect} from "react"
 import Image from "next/image";
 import Header from '../components/Header';
 import banner from './../images/banner.svg'
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+
 import wLogo from "./../images/shoplogo.svg"
 const categories =['Medicine','First Aid & Safety','Snacks & Candy','Food & Pantry','Beauty','Household','Drinks','Personal Care','Home Health','Vitamins & Supplements','Pet','Baby & Child','Frozen','Sales','COVID Essentials Shop']
 const products = [
@@ -125,7 +126,9 @@ const products = [
     
   },
 ]
+
 const HomePage = () => {
+  
   const [cartproducts, setCartProducts] = useState<any>([])
   const [open, setOpen] = useState(false)
   const setClose = () => {
@@ -157,8 +160,9 @@ const HomePage = () => {
     return total
   }
   return (<>
-    <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={ cartTotal} />
-    <div className="grid lg:grid-cols-5 grid-flow-row sm:grid-cols-5  grid-cols-5 min-w-[1000px] ">
+    <Header toggleCart={toggleCart} cartCount={cartproducts.length} cartTotal={cartTotal} />
+
+    <div className="grid lg:grid-cols-5 grid-flow-row sm:grid-cols-5  grid-cols-5 min-w-[1000px]">
       <div className="col-start-1 col-end-2 divide-y border-r border-r-2 h-screen fixed sm:hidden lg:block  ">
       
           <div className="flex flex-col w-full justify-center gap-1 items-center mt-3 row-start-1 row-end-2">

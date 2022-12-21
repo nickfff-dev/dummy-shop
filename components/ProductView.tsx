@@ -1,6 +1,9 @@
 import Product from "./Product"
+import { useEffect } from "react"
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ChevronLeftIcon, ChevronRightIcon,  } from "@heroicons/react/24/outline"
- function ProductView({products,addTocart}:{products:any,addTocart:any}) {
+function ProductView({ products, addTocart }: { products: any, addTocart: any }) {
+   
+
   return (
     <div className="bg-white -mt-6">
       <div className="mx-auto max-w-2xl py-8 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
