@@ -67,12 +67,12 @@ const Header = ({ toggleCart, cartCount, cartTotal }: { toggleCart: any, cartCou
         <span><svg   viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale70" className="h-6 w-6"><path fillRule="evenodd" clipRule="evenodd" d="M20.489 11.816a1.5 1.5 0 0 1 .011.228V19a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1.5h-9V19A1.5 1.5 0 0 1 6 20.5H5A1.5 1.5 0 0 1 3.5 19v-6.956a1.498 1.498 0 0 1 .04-.39l.985-4.597a4.5 4.5 0 0 1 4.4-3.557h6.15a4.5 4.5 0 0 1 4.4 3.557l.985 4.598c.012.052.022.106.029.161ZM6.855 10.5h10.29l-.604-2.814A1.5 1.5 0 0 0 15.075 6.5h-6.15A1.5 1.5 0 0 0 7.46 7.686L6.855 10.5ZM6 14.5a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm10-1a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2h-1Z"></path></svg></span><span className="font-bold text-black text-[15px] leading-4 ">Delivery to 9163563</span>
 
         </div>
-        <div className="flex">
+        <div className="hidden sm:flex ">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#0AAD0A" xmlns="http://www.w3.org/2000/svg" className="css-1uiiq64-ServiceEta"><path fillRule="evenodd" clipRule="evenodd" d="M14.535 4.32c.478-1.615-1.657-2.671-2.65-1.31L5.24 12.115c-.723.99-.016 2.384 1.212 2.384H11l-1.535 5.18c-.478 1.614 1.657 2.67 2.65 1.31l6.645-9.106c.723-.991.015-2.384-1.212-2.384H13l1.535-5.18Z"></path></svg>
           <p className="text-dummygreen font-bold ">Delivery by 1:05pm</p>
         </div>
-        <div>
-              <a className="bg-dummygreen rounded-full px-5 py-2 text-white font-bold text-xl">Log in</a>
+        <div className="bg-dummygreen rounded-full px-4 py-2 text-white font-bold text-xl">
+              <button className="">Login</button>
         </div>
         
         <div>
