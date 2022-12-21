@@ -5,6 +5,7 @@ const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocar
   const [showDetail, setShowDetail] = useState(false)
   const [orderStart, setOrderStart] = useState(false)
   const [quantity, setQuantity] = useState(product.quantity)
+  const [hideMe, setHideMe] = useState(true)
   useEffect(() => {
     
  
@@ -14,7 +15,7 @@ const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocar
     } else {
       document.body.classList.remove('overflow-y-hidden')
     }
-  }, [showDetail])
+  })
   const closeDetail = () => {
     setShowDetail(false);
 }
@@ -22,7 +23,7 @@ const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocar
   return (
     <>
       <div className="group relative" >
-    <div className="min-h-50    rounded-md   lg:h-50">
+    <div className="min-h-50 rounded-md   lg:h-50">
       <img
         src={product.imageSrc}
         alt={product.imageAlt}
@@ -67,7 +68,11 @@ const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocar
     
     </div>
       </div>
-      <div className={` ${showDetail === false ? "hidden" : ""}  fixed top-10 left-0 right-0 z-20 w-[1200px] mx-auto shadow shadow-xl `}> <ProductDetail closeDetail={ closeDetail} /></div>
+      <div onScroll={(e) => {
+    if (e.currentTarget.scrollTop > 0) { setHideMe(false) }
+    else if(e.currentTarget.scrollTop === 0){setHideMe(true)}
+   console.log( e.currentTarget.scrollTop)
+  }} className={` ${showDetail === false ? "hidden" : ""} overflow-y-scroll  h-[600px]   fixed top-10   border bg-white  rounded-xl left-0 right-0 z-20 max-w-screen mx-10  shadow shadow-xl `}> <ProductDetail hideMe={hideMe} closeDetail={ closeDetail} /></div>
       </>
   )
 }
