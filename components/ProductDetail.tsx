@@ -52,10 +52,10 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
           
         </div>
         <div className='col-start-9 col-end-12 '>
-          <div className="rounded-xl border flex items-start flex-col space-y-5 px-3 py-3">
-            <p className="pt-2">${product.BOGOF === true ? (product.price * ( quantity / 2)) : (product.price * quantity)}</p>
-            <p>${product.price} each</p>
-            <p>Free Delivery</p>
+          <div className="rounded-xl border flex items-start flex-col  px-3 py-3">
+            <p className="pt-2 text-black font-bold text-[23px] mb-1">${product.BOGOF === true ? (product.price * ( quantity / 2)) : (product.price * quantity)}</p>
+            <p className="text-[rgb(114 118 126)] mb-5 text-[15px]  font-semibold">${product.price} each</p>
+            <p className="text-[rgb(233 115 0)] text-[18px] ">Free Delivery</p>
             <p className="flex items-center"><svg data-testid="inventory_high_icon_custom" width="1em" height="1em" viewBox="0 0 24 24" fill="C7C8CD" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="16.5" width="8" height="3" rx="1.5" fill="green" fillOpacity="0.7"></rect><rect x="5.5" y="10.5" width="13" height="3" rx="1.5" fill="green" fillOpacity="0.8"></rect><rect x="3" y="4.5" width="18" height="3" rx="1.5" fill="green"></rect></svg><span>Many in Stock</span></p>
             
           
