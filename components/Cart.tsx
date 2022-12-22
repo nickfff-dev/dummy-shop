@@ -102,7 +102,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                             </div>
                             <span className="font-bold mt-5 text-[12px]">${ products.reduce((acc: any, prd: any) => {
                               
-                              return acc + (prd.price * prd.quantity)
+                              return acc + (prd.total)
                              }, 0).toFixed(2)
                              }</span>
                           </div>): null
@@ -168,7 +168,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                           Go to Checkout <span className="float-right bg-[#004d23] flex flex-col justify-center px-2 rounded text-[12px] ">
                             ${ products.length > 0 ?  products.reduce((acc: any, prd: any) => {
                             
-                         return acc + (prd.price * prd.quantity)
+                         return acc + (prd.total)
                         }, 0) : null
                         }</span>
                         </a>

@@ -98,6 +98,7 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
 </div>): null
       }
             <button onClick={() => {
+              product.total = (product.price * quantity)
               addTocart(product);
               closeDetail()
             }} className="bg-dummygreen  text-white font-bold w-full  rounded-lg text-lg px-4 py-2.5   ">Add To Cart</button>
