@@ -11,8 +11,8 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
 
 
  
-  return (<div className=" modal   bg-white fade  backdrop-blur" tabIndex={-1} id="modal" data-bs-toggle="modal" aria-hidden="true"  > 
-    <div className={` ${hideMe ? "hidden ": "shadow shadow-xl sticky top-0 z-40"} flex sticky bg-white w-full  justify-between px-2 py-2`} id="detailhead">
+  return (<div className=" modal    fade  backdrop-blur" id="modal" data-bs-toggle="modal" aria-hidden="true"  > 
+    <div className={` ${hideMe ? "hidden ": "shadow shadow-xl sticky top-0 z-40"} z-40 flex sticky bg-white w-full  justify-between px-2 py-2`} id="detailhead">
       <div className="flex">
       <img src={product.imageSrc} width={50} height={50} alt="dssd"/>
       <div className="flex flex-col">
