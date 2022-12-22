@@ -50,7 +50,10 @@ const Product = ({ product, addTocart ,removeFromCart,products}: { product: any,
     </div>
     <span className={` ${product.category ? "visible": "invisible"} text-[11px] rounded text-[#2B78C6] bg-[#F2F8FF] pr-10 mb-2 font-bold z-20 px-1`}>{product.category}</span>
     <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup className="text-[14px] -ml-1">{product.price.toString().split(".")[1]}</sup></p>
-    <div className="mt-4 flex justify-between" onClick={() => {
+        {
+          product.BOGOF === true ? (<p className="text-[#750046] text-[12px] font-bold">Buy 1 Get 1 Free</p>) : null
+    }
+        <div className="mt-4 flex justify-between" onClick={() => {
         setShowDetail(true);
        
 
