@@ -1,9 +1,9 @@
 import pdet from './../images/pdet.jpg'
 import { useEffect, useState } from 'react'
 import Image from "next/image"
-import { ArrowLeftIcon, StarIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { ArrowLeftIcon, StarIcon, ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
 
-const ProductDetail = ({closeDetail,hideMe, product,addTocart}:{closeDetail:any,hideMe:any, product:any, addTocart:any}) => {
+const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeDetail:any,hideMe:any, product:any, addTocart:any,products:any}) => {
   
  
   const [showDropDown, setShowDropDown] =useState(false)
@@ -93,6 +93,41 @@ const ProductDetail = ({closeDetail,hideMe, product,addTocart}:{closeDetail:any,
           </div>
           <p className="text-[#72767E] text-[15px] text-center ">Place your order with peace of mind.</p>
         </div>
+      </div>
+      <div className="flex justify-between items-center mt-12 "><h1 className="text-[23px] font-bold">Often Bought With</h1>    <div className="flex ">
+          <span className="flex items-center  " ><span className="text-dummygreen font-bold text-[15px]">View more</span> <ChevronRightIcon className="stroke-dummygreen stroke-2 h-3 mt-1" /></span>
+         
+        </div></div>
+      <div className=" grid grid-cols-1 pt-2 bg-white px-2 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-8 mt-20 border rounded-xl p-6">
+        {
+          products.map((product: any) => {
+            return(        <div key={product.id} className="group relative" onClick={()=>{addTocart(product)}}>
+            <div className="min-h-50   overflow-hidden rounded-md   lg:h-50">
+                   <img
+                     src={product.imageSrc}
+                     alt={product.imageAlt}
+                     className="h-50  w-full object-center lg:h-auto object-contain"
+                                     />
+                                     <button className="flex  bg-dummygreen rounded-full text-[10px] left-10 top-2 px-2 w-14  group-hover:w-full   group-hover:left-0 absolute text-white font-bold py-1 items-center justify-between "><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  color="systemGrayscale00"><path fillRule="evenodd" clipRule="evenodd" d="M12 3.5A1.5 1.5 0 0 1 13.5 5v5.5H19a1.5 1.5 0 0 1 1.493 1.355L20.5 12a1.5 1.5 0 0 1-1.5 1.5h-5.5V19a1.5 1.5 0 0 1-1.355 1.493L12 20.5a1.5 1.5 0 0 1-1.5-1.5v-5.5H5a1.5 1.5 0 0 1-1.493-1.355L3.5 12A1.5 1.5 0 0 1 5 10.5h5.5V5a1.5 1.5 0 0 1 1.355-1.493L12 3.5Z"></path></svg><p className="group-hover:before:content-['Add_to_cart']  before:content-['Add'] "></p> </button>
+                 </div>
+                 <span className={` ${product.category ? "visible": "invisible"} text-[8px] rounded text-[#2B78C6] bg-[#F2F8FF] mb-2 font-bold z-20 px-1`}>{product.category}</span>
+                 <p className="text-2xl font-bold  text-black mt-2">${product.price.toString().split(".")[0]} <sup className="text-[14px] -ml-1">{product.price.toString().split(".")[1]}</sup></p>
+                 <div className="mt-4 flex justify-between">
+                   <div>
+                     <h3 className="text-sm text-gray-700">
+                   
+                         <span aria-hidden="true" className="absolute inset-0" />
+                         {product.name}
+                       
+                                       </h3>
+                                       <p className="flex items-center"><StarIcon className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon  className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon className="h-4 w-4 fill-[#fec12c] stroke-0"/><StarIcon className="h-4 w-4  stroke-[#fec12c]"/><span className=" h-4 text-[12px]">(451)</span></p>
+                     <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                   </div>
+                 
+                 </div>
+                     </div>)
+          })
+      }
       </div>
     </div>
 

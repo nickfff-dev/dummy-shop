@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeftIcon, ShoppingCartIcon, StarIcon, PlusIcon } from "@heroicons/react/24/outline";
 import ProductDetail from "./ProductDetail";
-const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocart: any,removeFromCart :any }) => {
+const Product = ({ product, addTocart ,removeFromCart,products}: { product: any, addTocart: any,removeFromCart :any,products:any }) => {
   const [showDetail, setShowDetail] = useState(false)
   const [orderStart, setOrderStart] = useState(false)
   const [quantity, setQuantity] = useState(product.quantity)
@@ -72,7 +72,7 @@ const Product = ({ product, addTocart ,removeFromCart}: { product: any, addTocar
     if (e.currentTarget.scrollTop > 0) { setHideMe(false) }
     else if(e.currentTarget.scrollTop === 0){setHideMe(true)}
    console.log( e.currentTarget.scrollTop)
-      }} className={` ${showDetail === false ? "hidden" : ""} overflow-y-scroll  h-[600px]   fixed top-10   border bg-white  rounded-xl left-0 right-0 z-20 max-w-screen mx-10  shadow shadow-xl `}> <ProductDetail hideMe={hideMe} closeDetail={closeDetail} product={ product} addTocart={addTocart} /></div>
+      }} className={` ${showDetail === false ? "hidden" : ""} overflow-y-scroll  h-[600px]   fixed top-10   border bg-white  rounded-xl left-0 right-0 z-20 max-w-screen mx-10  shadow shadow-xl `}> <ProductDetail hideMe={hideMe} closeDetail={closeDetail} product={product} addTocart={addTocart} products={ products} /></div>
       </>
   )
 }
