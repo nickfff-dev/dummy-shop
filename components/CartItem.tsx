@@ -49,16 +49,18 @@ const CartItem = ({ product,removeFromCart }: { product: any,removeFromCart:any 
         }} type="checkbox" value="" className="w-4 h-4 text-[#750046] bg-gray-100 rounded border-gray-300 focus:ring-[#750046]" /> <svg onClick={() => {
           setShowInfoPop(!showInfoPop)
         }} width="16" height="16" className="cursor-pointer" viewBox="0 0 24 24" fill="#C7C8CD" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale30"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM10.5 12a1.5 1.5 0 0 1 3 0v4a1.5 1.5 0 0 1-3 0v-4Zm3-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path></svg>
-        <div className={`${showInfoPop ? "" : "hidden"}   absolute left-48 mt-48`}><div className="infopop-inner">
+        <div onClick={() => {
+          setShowInfoPop(!showInfoPop)
+        }} className={`${showInfoPop ? "" : "hidden"} shadow `}><div className="infopop-inner">
           <h3>Buy 1 Give 1</h3>
-          <p>By selecting this option you are allowing our organization to gift one of the free items from the current buy one get one promotion</p>
+          <span className="text-[10px] w-24 " >By selecting this option you are allowing  <br/> our organization to gift one of the free items <br/> from the current buy one get one promotion</span>
         </div></div></div>):(null )
         }
         {
-          giftReady === true ? (       <div className="flex"> <p className="font-bold text-[#750046] text-[9px]">  *You are donating one of your free items from the Buy 1 get 1 Promo</p> <svg onClick={() => {
+          giftReady === true ? (       <div  onClick={() => {
             setShowInfoPop(!showInfoPop)
-          }} width="16" height="16" className="cursor-pointer" viewBox="0 0 24 24" fill="#C7C8CD" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale30"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM10.5 12a1.5 1.5 0 0 1 3 0v4a1.5 1.5 0 0 1-3 0v-4Zm3-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path></svg>
-          <div className={`${showInfoPop ? "" : "hidden"}   absolute left-32 mt-5`}><div className="infopop-inner">
+          }}className="flex"> <p className="font-bold text-[#750046] text-[9px]">  *You are donating one of your free items from the Buy 1 get 1 Promo</p> <svg  width="16" height="16" className="cursor-pointer" viewBox="0 0 24 24" fill="#C7C8CD" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale30"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM10.5 12a1.5 1.5 0 0 1 3 0v4a1.5 1.5 0 0 1-3 0v-4Zm3-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path></svg>
+          <div className={`${showInfoPop ? "" : "hidden"}    shadow `}><div className="infopop-inner">
             <h3>Buy 1 Give 1</h3>
             <p>you  allowed our organization to gift one of the free items from the current buy one get one promotion</p>
           </div></div></div>):null
