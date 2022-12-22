@@ -28,7 +28,7 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
     </div>
     <div className="p-6">
       <div className="flex items-center cursor-pointer " onClick={closeDetail}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg" ><path fill-rule="evenodd" clip-rule="evenodd" d="M10.94 3.94a1.5 1.5 0 0 1 2.12 2.12L8.622 10.5H19a1.5 1.5 0 0 1 1.493 1.355L20.5 12a1.5 1.5 0 0 1-1.5 1.5H8.621l4.44 4.44a1.5 1.5 0 0 1 .103 2.007l-.103.114a1.5 1.5 0 0 1-2.122 0l-7-7a2.54 2.54 0 0 1-.082-.09 1.334 1.334 0 0 1-.156-.22 1.496 1.496 0 0 1 .123-1.682c.035-.045.074-.088.115-.13l-.082.09c.02-.024.041-.047.063-.07l.02-.02 7-7Z"></path></svg> <span className="text-black text-[15px] font-semibold pl-2">Back</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#343538" xmlns="http://www.w3.org/2000/svg" ><path fillRule="evenodd" clipRule="evenodd" d="M10.94 3.94a1.5 1.5 0 0 1 2.12 2.12L8.622 10.5H19a1.5 1.5 0 0 1 1.493 1.355L20.5 12a1.5 1.5 0 0 1-1.5 1.5H8.621l4.44 4.44a1.5 1.5 0 0 1 .103 2.007l-.103.114a1.5 1.5 0 0 1-2.122 0l-7-7a2.54 2.54 0 0 1-.082-.09 1.334 1.334 0 0 1-.156-.22 1.496 1.496 0 0 1 .123-1.682c.035-.045.074-.088.115-.13l-.082.09c.02-.024.041-.047.063-.07l.02-.02 7-7Z"></path></svg> <span className="text-black text-[15px] font-semibold pl-2">Back</span>
       </div>
       <div className="grid grid-cols-12  gap-3">
         <div className='col-start-2 col-end-5 '>
@@ -56,12 +56,12 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
             <p className="pt-2">${product.price * quantity}</p>
             <p>${product.price} each</p>
             <p>Free Delivery</p>
-            <p className="flex items-center"><svg data-testid="inventory_high_icon_custom" width="1em" height="1em" viewBox="0 0 24 24" fill="C7C8CD" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="16.5" width="8" height="3" rx="1.5" fill="green" fill-opacity="0.7"></rect><rect x="5.5" y="10.5" width="13" height="3" rx="1.5" fill="green" fill-opacity="0.8"></rect><rect x="3" y="4.5" width="18" height="3" rx="1.5" fill="green"></rect></svg><span>Many in Stock</span></p>
+            <p className="flex items-center"><svg data-testid="inventory_high_icon_custom" width="1em" height="1em" viewBox="0 0 24 24" fill="C7C8CD" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="16.5" width="8" height="3" rx="1.5" fill="green" fillOpacity="0.7"></rect><rect x="5.5" y="10.5" width="13" height="3" rx="1.5" fill="green" fillOpacity="0.8"></rect><rect x="3" y="4.5" width="18" height="3" rx="1.5" fill="green"></rect></svg><span>Many in Stock</span></p>
             
           
             <button onClick={() => {
               setShowDropDown(!showDropDown)
-            }} id="dropdownDefault" data-dropdown-toggle="dropdown" className="w-full bg-[#f6f7f8]  flex justify-center text-black font-bold text-lg   rounded-lg  px-4 py-2.5  inline-flex items-center  " type="button"><span className="text-center grow" >{ quantity}</span><svg className=" flex-none w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            }} id="dropdownDefault" data-dropdown-toggle="dropdown" className="w-full bg-[#f6f7f8]  flex justify-center text-black font-bold text-lg   rounded-lg  px-4 py-2.5  inline-flex items-center  " type="button"><span className="text-center grow" >{ quantity}</span><svg className=" flex-none w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             
 
@@ -90,7 +90,7 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
               }} type="checkbox" value="" className="w-4 h-4 text-[#750046] bg-gray-100 rounded border-gray-300 focus:ring-[#750046]" />
               <svg onClick={() => {
                 setShowInfoPop(!showInfoPop)
-              }} width="16" height="16" className="cursor-pointer" viewBox="0 0 24 24" fill="#C7C8CD" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale30"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM10.5 12a1.5 1.5 0 0 1 3 0v4a1.5 1.5 0 0 1-3 0v-4Zm3-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path></svg>
+              }} width="16" height="16" className="cursor-pointer" viewBox="0 0 24 24" fill="#C7C8CD" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale30"><path fillRule="evenodd" clipRule="evenodd" d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM10.5 12a1.5 1.5 0 0 1 3 0v4a1.5 1.5 0 0 1-3 0v-4Zm3-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path></svg>
               <div className={`${showInfoPop ? "" : "hidden"}   infopop`}><div className="infopop-inner">
                 <h3>Buy 1 Give 1</h3>
                 <p>By selecting this option you are allowing our organization to gift one of the free items from the current buy one get one promotion</p>
