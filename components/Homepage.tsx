@@ -18,7 +18,8 @@ const products = [
     price: 52.99,
     color: '288 ct',
     category: "FSA / HSA Eligible",
-    quantity:1,
+    quantity: 1,
+    details: "Benzalkonium Chloride, Dextrose, Microcrystalline Cellulose, Phenylethyl Alcohol, Polysorbate 80, Purified Water, Sodium Carboxymethylcellulose"
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ const products = [
     price: 8.99,
     color: '40 ct',
     category: "Super Absorbency",
-    quantity:1,
+    quantity: 1,
+    details:"Size 2"
 
   },  {
     id: 3,
@@ -40,7 +42,8 @@ const products = [
     price: 23.99,
     color: '2 each',
     category: "FSA / HSA Eligible",
-    quantity:1,
+    quantity: 1,
+    details: "A rapid test for the qualitative detection of Covid-19 antigens in nasal swab specimens. For infection detection. Easy: A simple nasal swab. Fast: Results in 15 minutes. This item is electronically protected"
   },  {
     id: 4,
     name: 'Flowflex Antigen Home Test, Covid-19',
@@ -50,7 +53,8 @@ const products = [
     price: 9.99,
     color: '1 each',
     category: "FSA / HSA Eligible",
-    quantity:1,
+    quantity: 1,
+    details:"Easy to use. Accurate. Quick results. For in vitro diagnostic use. IVD. Further information included. 2 degree C. 36 degree F. 30 degree C. 86 degree F. Contents: 1 test cassette. 1 extraction buffer tube. 1 disposable nasal swab (Sterile Nasal Swab). 1 package insert (En/Es)"
   },  {
     id: 5,
     name: 'Mucinex® DM 12 Hr Relief Tablets, 600 mg Guaifenesin, 30 mg',
@@ -60,7 +64,8 @@ const products = [
     price: 24.99,
     color: '20 ct',
     category: "FSA / HSA Eligible",
-    quantity:1,
+    quantity: 1,
+    details:"Other Information: Store at 68-77 degrees F (20-25 degrees C). Misc: 600 mg guaifenesin & 30 mg dextromethorphan HBr extended-release bi-layer tablets. Controls cough; thins and loosens mucus; immediate and extended release."
   },  {
     id: 6,
     name: 'Aspercreme Pain Relief Patch, Max Strength',
@@ -70,7 +75,8 @@ const products = [
     price: 14.49,
     color: '5 ct',
     category: "FSA / HSA Eligible",
-    quantity:1,
+    quantity: 1,
+    details:"Aluminum Glycinate, Aluminum Hydroxide, Cellulose Gum, Glycerin, Methyl Acrylate/2-ethylhexyl Acrylate Copolymer, Methylparaben, Nonoxynol-30, Polyacrylic Acid, Polysorbate 80, Propylene Glycol, Silica, Sodium Polyacrylate, Tartaric"
   },  {
     id: 7,
     name: "Bobo's Oat Bar, Chocolate Almond Butter, Stuff'd",
@@ -80,7 +86,8 @@ const products = [
     price: 3.49,
     color: '2.5 oz',
     category: "Gluten-Free",
-    quantity:1,
+    quantity: 1,
+    details: "Plant based. Since 2003, our small-batch Boulder bakery has dreamed up yummy oat bar recipes using wholesome simple ingredients. When our bakers figured out how to literally pump nut butters smack in the middle of our humble oat bar, we shouted Bingo! Same beloved bar, now Stuff’d with a heart of creamy goodness. Bake with you in mind. Baked with love. Boulder, Colorado."
   },
   {
     id: 8,
@@ -91,7 +98,8 @@ const products = [
     price: 6.99,
     color: '45 each',
     category: "Gluten-Free",
-    quantity:1,
+    quantity: 1,
+    details: "Ascorbic Acid (vitamin C), Aspartame, Citric Acid, Extracts Of Lemon Balm And A Ricola Herb Mixture (elder, Horehound, Hyssop, Lemon Balm, Linden Flowers, Mallow, Peppermint, Sage, Thyme, Wild Thyme), Isomalt, Natural Color (beta-"
   },
   {
     id: 9,
@@ -101,7 +109,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 5.49,
     color: '16 oz',
-    quantity:1,
+    quantity: 1,
+    details:"Unbleached Enriched Flour (wheat Flour, Niacin, Reduced Iron, Thiamine Mononitrate {vitamin B1}, Riboflavin {vitamin B2}, Folic Acid), Canola Oil, Palm Oil, Sea Salt, Salt, Malted Barley Flour, Baking Soda, Yeast."
     
   },
   {
@@ -112,7 +121,9 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 4.79,
     color: '10.5 oz',
-    quantity:1,
+    quantity: 1,
+    details: "Enriched Flour (wheat Flour, Malted Barley Flour, Niacin, Ferrous Sulfate Or Reduced Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Palm Oil, Dextrose, Sugar, Cornstarch, Soybean Oil, Glycerin, Contains 2% Or Less:"
+    
     
   },
   {
@@ -123,7 +134,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 4.79,
     color: '13 oz',
-    quantity:1,
+    quantity: 1,
+    details:"Unbleached Enriched Flour (wheat Flour, Niacin, Reduced Iron, Thiamine Mononitrate {vitamin B1}, Riboflavin {vitamin B2}, Folic Acid), Semisweet Chocolate Chips (sugar, Chocolate, Cocoa Butter, Dextrose, Milk, Soy Lecithin), Sugar,"
     
   },
   {
@@ -134,7 +146,8 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: 3.29,
     color: '6.6 oz',
-    quantity:1,
+    quantity: 1,
+    details:"Unbleached Enriched Flour (wheat Flour, Niacin, Reduced Iron, Thiamine Mononitrate Vitamin B1}, Riboflavin {vitamin B2}, Folic Acid), Canola Oil, Palm Oil, Sugar, Salt, Leavening (calcium Phosphate, Baking Soda), High Fructose Corn"
   },
 ]
 

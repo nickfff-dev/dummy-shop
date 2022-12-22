@@ -1,7 +1,8 @@
 import pdet from './../images/pdet.jpg'
 import { useEffect, useState } from 'react'
 import Image from "next/image"
-import { ArrowLeftIcon,StarIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { ArrowLeftIcon, StarIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+
 const ProductDetail = ({closeDetail,hideMe}:{closeDetail:any,hideMe:any}) => {
   
  
@@ -9,8 +10,8 @@ const ProductDetail = ({closeDetail,hideMe}:{closeDetail:any,hideMe:any}) => {
   const [quantity, setQuantity] = useState(0)
 
 
-
-  return (<div className=" modal   bg-white fade  backdrop-blur" tabIndex={-1} id="fodal" > 
+ 
+  return (<div className=" modal   bg-white fade  backdrop-blur" tabIndex={-1} id="modal" data-bs-toggle="modal" aria-hidden="true"  > 
     <div className={` ${hideMe ? "hidden ": "shadow shadow-xl sticky top-0 z-40"} flex sticky bg-white w-full  justify-between px-2 py-2`} id="detailhead">
       <div className="flex">
       <Image src={pdet} width={50} height={50} alt="dssd"/>
