@@ -84,7 +84,7 @@ const ProductDetail = ({closeDetail,hideMe, products, product,addTocart}:{closeD
             {
               product.BOGOF === true ? (      <div className="flex items-center gap-2 mb-4">
     
-              <label htmlFor="default-checkbox" className="ml-2 text-[15px] font-bold text-[#750046]">Buy 1 Give 1</label>
+              <label htmlFor="default-checkbox" className=" text-[15px] font-bold text-[#750046]">Buy 1 Give 1</label>
                 <input id="default-checkbox" onChange={() => {
                   product.gift = true
               }} type="checkbox" value="" className="w-4 h-4 text-[#750046] bg-gray-100 rounded border-gray-300 focus:ring-[#750046]" />
