@@ -44,3 +44,21 @@ html{
 
 
 
+.infopop-inner{
+  background-color: rgb(31, 90, 150);
+    padding: 11px 12px 13px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    max-width: 30rem;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+    width: 256px;
+
+}
+
+.infopop{
+  position: absolute;
+  inset: 0px auto auto 0px;
+  transform: translate(1000px, 335px);
+}

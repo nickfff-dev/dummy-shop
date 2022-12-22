@@ -107,7 +107,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                              }</span>
                           </div>): null
                    }
-                      </div>
+                      </div> 
                         <div className="-mt-3 ">
                           {products.length > 0 ? (<div className="bg-[#FAF1E5] py-1 px-1 h-8 text-[18px]"><span className="text-[#750046]">Your first delivery is free!</span></div>) : null}
                         <div className="flow-root  ">
