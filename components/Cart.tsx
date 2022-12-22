@@ -6,7 +6,7 @@ import CartItem from './CartItem'
 import shoplogo from './../images/shoplogo.svg'
 
 import CartSvg from './../images/cart.svg'
-export default function Cart({products, suggestedProducts, open, setOPen,setClose ,addTocart}:{products:any,open:any, setOPen:any,setClose:any,addTocart:any, suggestedProducts:any}) {
+export default function Cart({products, removeFromCart, suggestedProducts, open, setOPen,setClose ,addTocart}:{products:any,open:any, setOPen:any,setClose:any,addTocart:any, suggestedProducts:any,removeFromCart:any}) {
 
 
   return (
@@ -113,7 +113,7 @@ export default function Cart({products, suggestedProducts, open, setOPen,setClos
                         <div className="flow-root  ">
                         
                             {   products.length > 0 ? (  <ul role="list" className="  bg-white px-2 divide-y divide-gray-200">{products.map((product:any, index:any) => (
-                             <CartItem key={index} product ={product} />
+                             <CartItem key={index} product ={product} removeFromCart={removeFromCart} />
                             ))}</ul>) : (<div className="flex flex-col items-center  overflow-y-hidden justify-center"><Image alt="cart" src={CartSvg} width={300 } height={30} /><p>Your personal cart is empty</p>    <button onClick={setClose} className="text-dummygreen">Shop Now</button></div>)}
                           
                         </div>

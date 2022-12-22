@@ -36,13 +36,8 @@ const Product = ({ product, addTocart ,removeFromCart,products}: { product: any,
           />
           {
             orderStart ? (<button className="flex someone bg-dummygreen rounded-full left-24 top-2 px-2 w-20 group-hover:w-full  group-hover:bg-[#004d23] group-hover:outline group-hover:outline-dummygreen group-hover:left-0 absolute text-white font-bold py-1 items-center justify-between "><svg width="24" onClick={() => {
-              if (quantity > 1) {
-                product.quantity = quantity - 1
-                setQuantity(quantity - 1)
-              } else {
-                removeFromCart(product)
-                setOrderStart(false)
-              }
+              removeFromCart(product)
+              setOrderStart(false)
             }} height="24" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" color="systemGrayscale00"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 4h-3.563a2 2 0 0 0-3.874 0H6.5a1.5 1.5 0 1 0 0 3h11a1.5 1.5 0 0 0 0-3ZM7 9a1 1 0 0 0-1 1v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10a1 1 0 0 0-1-1H7Z"></path></svg><p>{quantity}</p>
               
               <svg onClick={() => {

@@ -33,13 +33,15 @@ const HomePage = () => {
   }
   const removeFromCart = (product: any) => {
     
-    var array = [...cartproducts]
-
+    if (cartproducts.length > 0) {
+      var array = [...cartproducts]
+     
     var index = array.indexOf(product)
     if (index !== -1) {
       array.splice(index, 1);
-      setCartProducts({cartproducts: array})
+      setCartProducts([...array])
     }
+  }
   }
 
   return (<>
@@ -85,7 +87,7 @@ const HomePage = () => {
           <p className="float-right text-sm text-gray-500">Sponsored</p>
         </div>
       <ProductView products={products} addTocart={addTocart} removeFromCart={removeFromCart} />
-    <Cart products={cartproducts ? cartproducts : null} open={open} setOPen={setOpen} setClose={setClose} addTocart={addTocart} suggestedProducts={ products} />
+    <Cart products={cartproducts ? cartproducts : null} open={open} removeFromCart={removeFromCart} setOPen={setOpen} setClose={setClose} addTocart={addTocart} suggestedProducts={ products} />
     </div>
     </div>
   </>)
